@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - '3050:80'
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - MONGO_DB=component-library-dev
+      - MONGO_PASSWORD=devuser123
+      - MONGO_USERNAME=devuser
+      - MONGO_PORT=37488
+      - MONGO_HOST=137488
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
