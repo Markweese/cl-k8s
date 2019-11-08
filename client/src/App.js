@@ -12,7 +12,7 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            ComponentLibrary
+            ComponentLibrary Kube
           </p>
           <a
             className="App-link"
