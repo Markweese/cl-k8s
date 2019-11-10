@@ -1,9 +1,9 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: cl-io-tls
+  name: componentlibrary-io-tls
 spec:
-  secretName: cl-io
+  secretName: componentlibrary-io
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
