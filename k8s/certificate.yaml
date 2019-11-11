@@ -9,8 +9,8 @@ spec:
     kind: ClusterIssuer
   commonName: componentlibrary.io
   dnsNames:
-    - componentlibrary.io
-    - www.componentlibrary.io
+  - componentlibrary.io
+  - www.componentlibrary.io
   acme:
     config:
       - http01:
