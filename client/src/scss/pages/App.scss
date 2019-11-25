@@ -1,0 +1,17 @@
+.cl-header {
+
+  &__menu {
+
+    &-left {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &-right {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}

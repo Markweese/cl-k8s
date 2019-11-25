@@ -13,7 +13,7 @@ class Builder extends Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    await axios.post('/api/builder', {
+    await axios.post('/api/components', {
       name: this.state.name,
       type: this.state.type,
       tags: this.state.selectedTags,
@@ -32,16 +32,17 @@ class Builder extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Builder</h1>
+      <div class='cl-builder'>
+        <h1 class='cl-builder__header'>Builder</h1>
         <form onSubmit={this.handleSubmit}>
-          <p>Name Your Component</p>
+          <label>Name Your Component</label>
           <input
             name='name'
             value={this.state.name}
           />
           <input
             name='html'
+            class='cl-builder__hidden'
             value={this.state.selectedHTML}
           />
           <input

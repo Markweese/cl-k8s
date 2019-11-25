@@ -1,32 +1,25 @@
 import React from 'react';
+import './scss/main.scss';
 import logo from './logo.svg';
-import './App.css';
+import Builder from './javascripts/pages/Builder';
+import Library from './javascripts/pages/Library';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Builder from './Builder';
-import Library from './Library';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            ComponentLibrary Kube
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <Link to="/">Library</Link>
-          <Link to="/builder">Builder</Link>
+      <div className="cl-header pt-20 pr-10 pb-20 pl-20">
+        <header className="cl-header__menu col-12">
+          <div className="cl-header__menu-left col-6">
+            <Link to="/library" className="col-3 btn-blue--solid">Library</Link>
+            <Link to="/builder" className="col-3">Builder</Link>
+          </div>
+          <div className="cl-header__menu-right col-6">
+            <Link to="/library" className="col-3">Login</Link>
+          </div>
         </header>
-        <div>
-          <Route exact path="/" component={Library} />
+        <div className="cl-content">
+          <Route exact path="/library" component={Library} />
           <Route exact path="/builder" component={Builder} />
         </div>
       </div>

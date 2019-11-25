@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import LibraryFilters from '../components/LibraryFilters/LibraryFilters';
 
 class Library extends Component {
   state = {
@@ -14,7 +15,7 @@ class Library extends Component {
   }
 
   async fetchComponents() {
-    const components = await axios.get('/api/library');
+    const components = await axios.get('/api/components');
     this.setState({ currentComponents: components.data });
   }
 
@@ -24,8 +25,9 @@ class Library extends Component {
 
   render() {
     return (
-      <div>
-        <h1>All Components</h1>
+      <div className="cl-library">
+        <h1 className="cl-library__header pb-20">Component Library</h1>
+        <LibraryFilters />
         <div>
           {this.renderComponents()}
         </div>

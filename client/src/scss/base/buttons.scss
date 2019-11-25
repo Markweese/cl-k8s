@@ -1,0 +1,36 @@
+button {
+  border-radius: pxem(10);
+  padding: pxem(20) pxem(30);  
+}
+
+$color-map: (
+  blue: $color-blue,
+  blue-light: $color-blue-light,
+  black: $color-black,
+  gray: $color-gray,
+  light-gray: $color-light-gray
+);
+
+@each $color in $color-map {
+  .btn-#{$color} {
+    color: $color;
+    text-align: center;
+    border-color: $color;
+    border-width: pxem(2);
+    padding: pxem(15) pxem(20);
+
+    &:hover {
+      color: white;
+      background-color: $color;
+    }
+
+    &--solid {
+      color: white;
+      background-color: $color;
+
+      &:hover {
+        // background-color: darken($color, 10%);
+      }
+    }
+  }
+}

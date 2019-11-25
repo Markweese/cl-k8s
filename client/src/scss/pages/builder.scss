@@ -1,0 +1,11 @@
+.cl-builder {
+
+  &__header {
+    color: $color-blue;
+    font-size: pxem(16);
+  }
+
+  &__hidden {
+    visibility: hidden;
+  }
+}
