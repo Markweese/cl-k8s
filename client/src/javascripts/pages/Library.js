@@ -28,13 +28,14 @@ class Library extends Component {
           { this.state.currentComponents &&
 
             this.state.currentComponents.map(item => (
-            <div>
-              <>
-                <h3>{item.name}</h3>
-                <p>{item.type}</p>
-              </>
-            </div>
-          ))}
+              <div>
+                <>
+                  <h3>{item.name}</h3>
+                  <p>{item.type}</p>
+                </>
+              </div>
+            ))
+          }
         </div>
       </div>
     )

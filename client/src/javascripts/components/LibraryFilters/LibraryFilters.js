@@ -25,36 +25,6 @@ class LibraryFilters extends Component {
     this.setState({ types: types.data });
   };
 
-  renderSelectedTags() {
-    let tags = [];
-
-    this.state.selectedTags.forEach(tag => {
-      tags.push(`<a className="selected-tag">${tag}</a>`);
-    });
-
-    return tags;
-  };
-
-  renderTypes() {
-    let types = []
-
-    this.state.types.forEach(type => {
-      types.push(`<li className="type-select">${type.type}</li>`);
-    });
-
-    return types;
-  };
-
-  renderTags() {
-    let tags = []
-
-    this.state.tags.forEach(tag => {
-      tags.push(`<li className="tag-select">${tag}</li>`);
-    });
-
-    return tags;
-  }
-
   openTypeDropdown = event => {
     event.preventDefault();
 
@@ -68,23 +38,46 @@ class LibraryFilters extends Component {
   render() {
     return (
       <form className="cl-library__filters mb-30">
-        <div className="cl-library__filters--tags col-3">
-          <input placeholder="Search Tags..."/>
+        <div className="cl-library__filters--dropdown-container col-3">
+          <input className="cl-library__filters--tags" placeholder="Search Tags..."/>
           { this.state.tagsDropdownActive &&
-            <ul>
-              {this.renderTags()}
+
+            <ul className="cl-library__filters--dropdown">
+              {this.state.tags &&
+
+                this.state.tags.map(item => (
+                  <>
+                  <li className="item">{item.tags}</li>
+                  </>
+                ))
+              }
             </ul>
           }
           <div className="selected-tags">
-            {this.renderSelectedTags()}
+            {this.state.selectedTags &&
+
+              this.state.selectedTags.map(item => (
+                <>
+                <p>{item}</p>
+                </>
+              ))
+            }
           </div>
         </div>
-        <div className="cl-library__filters--type col-3">
-          <button className="type-dropdown" onClick={this.openTypeDropdown}>
+        <div className="cl-library__filters--dropdown-container col-3">
+          <button className="cl-library__filters--type" onClick={this.openTypeDropdown}>
             Type ▼
             { this.state.typeDropdownActive &&
-              <ul>
-                {this.renderTypes()}
+
+              <ul className="cl-library__filters--dropdown">
+                { this.state.types &&
+
+                this.state.types.map(item => (
+                  <>
+                  <li className="item">{item.type}</li>
+                  </>
+                ))
+                }
               </ul>
             }
           </button>

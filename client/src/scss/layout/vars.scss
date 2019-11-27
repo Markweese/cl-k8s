@@ -1,8 +1,18 @@
 // Colors
 
 $color-blue: #0671B5;
-$color-blue-light: #43D0F6;
+$color-blue-light: #b6daf0;
 
 $color-black: #21252B;
-$color-gray: #282D34;
-$color-light-gray: #9CA5B2;
+$color-gray: #4A4A4A;
+$color-light-gray: #DEDEDE;
+
+$color-white: #ffffff;
+
+// Breakpoints
+
+$bp-xs: pxem(300);
+$bp-s: pxem(768);
+$bp-m: pxem(1000);
+$bp-desktop: pxem(1025);
+$bp-l: pxem(1200);
