@@ -3,17 +3,16 @@ kind: Ingress
 metadata:
   name: ingress-service
   annotations:
-  annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$1
-    certmanager.k8s.io/cluster-issuer: 'letsencrypt-prod'
+    certmanager.io/cluster-issuer: 'letsencrypt-prod'
     nginx.ingress.kubernetes.io/ssl-redirect: 'false'
 spec:
   tls:
     - hosts:
         - componentlibrary.io
         - www.componentlibrary.io
-      secretName: componentlibrary-io
+      secretName: componentlibrary-io-tls
   rules:
   - host: componentlibrary.io
     http:

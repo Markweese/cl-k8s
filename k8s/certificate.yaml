@@ -1,20 +1,13 @@
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: componentlibrary-io-tls
+  name: componentlibrary-io
 spec:
-  secretName: componentlibrary-io
+  secretName: componentlibrary-io-tls
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: componentlibrary.io
+  commonName: 'componentlibrary.io'
   dnsNames:
-    - componentlibrary.io
-    - www.componentlibrary.io
-  acme:
-    config:
-      - http01:
-          ingressClass: nginx
-        domains:
-          - componentlibrary.io
-          - www.componentlibrary.io
+  - componentlibrary.io
+  - www.componentlibrary.io

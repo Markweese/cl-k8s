@@ -29,5 +29,13 @@ spec:
             - name: MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
+                  name: mongouser
+                  key: MONGO_USERNAME
                   name: mongopassword
                   key: MONGO_PASSWORD
+                  name: mongodb
+                  key: MONGO_DB
+                  name: mongoport
+                  key: MONGO_PORT
+                  name: mongohost
+                  key: MONGO_HOST
