@@ -19,23 +19,15 @@ spec:
             - containerPort: 5000
           env:
             - name: MONGO_HOST
-              value: mongo-cluster-ip-service
+              value: ds237989
             - name: MONGO_PORT
-              value: '27017'
+              value: '37989'
             - name: MONGO_USERNAME
-              value: admin
+              value: MWBrewer
             - name: MONGO_DB
               value: component-library
             - name: MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mongouser
-                  key: MONGO_USERNAME
                   name: mongopassword
                   key: MONGO_PASSWORD
-                  name: mongodb
-                  key: MONGO_DB
-                  name: mongoport
-                  key: MONGO_PORT
-                  name: mongohost
-                  key: MONGO_HOST
