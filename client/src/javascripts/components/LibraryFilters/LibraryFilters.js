@@ -12,11 +12,17 @@ class LibraryFilters extends Component {
 
   componentDidMount() {
     this.fetchTags();
+    this.fetchTypes();
   };
 
   async fetchTags() {
-    const filters = await axios.get('/api/tags');
-    this.setState({ currentComponents: filters.data });
+    const tags = await axios.get('/api/tags');
+    this.setState({ tags: tags.data });
+  };
+
+  async fetchTypes() {
+    const types = await axios.get('/api/types');
+    this.setState({ types: types.data });
   };
 
   renderSelectedTags() {
@@ -33,7 +39,7 @@ class LibraryFilters extends Component {
     let types = []
 
     this.state.types.forEach(type => {
-      types.push(`<li class="type-select">${type}</li>`);
+      types.push(`<li class="type-select">${type.type}</li>`);
     });
 
     return types;
@@ -61,7 +67,7 @@ class LibraryFilters extends Component {
 
   render() {
     return (
-      <form class="cl-library__filters">
+      <form class="cl-library__filters mb-30">
         <div class="cl-library__filters--tags col-3">
           <input placeholder="Search Tags..."/>
           { this.state.tagsDropdownActive &&
