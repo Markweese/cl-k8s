@@ -32,8 +32,8 @@ class Builder extends Component {
 
   render() {
     return (
-      <div class='cl-builder'>
-        <h1 class='cl-builder__header'>Builder</h1>
+      <div className='cl-builder'>
+        <h1 className='cl-builder__header'>Builder</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Name Your Component</label>
           <input
@@ -42,7 +42,7 @@ class Builder extends Component {
           />
           <input
             name='html'
-            class='cl-builder__hidden'
+            className='cl-builder__hidden'
             value={this.state.selectedHTML}
           />
           <input

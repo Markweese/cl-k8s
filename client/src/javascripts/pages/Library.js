@@ -24,7 +24,7 @@ class Library extends Component {
       <div className="cl-library">
         <h1 className="cl-library__header pb-20">Component Library</h1>
         <LibraryFilters />
-        <div class="cl-library__components">
+        <div className="cl-library__components">
           { this.state.currentComponents &&
 
             this.state.currentComponents.map(item => (

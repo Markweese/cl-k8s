@@ -29,7 +29,7 @@ class LibraryFilters extends Component {
     let tags = [];
 
     this.state.selectedTags.forEach(tag => {
-      tags.push(`<a class="selected-tag">${tag}</a>`);
+      tags.push(`<a className="selected-tag">${tag}</a>`);
     });
 
     return tags;
@@ -39,7 +39,7 @@ class LibraryFilters extends Component {
     let types = []
 
     this.state.types.forEach(type => {
-      types.push(`<li class="type-select">${type.type}</li>`);
+      types.push(`<li className="type-select">${type.type}</li>`);
     });
 
     return types;
@@ -49,7 +49,7 @@ class LibraryFilters extends Component {
     let tags = []
 
     this.state.tags.forEach(tag => {
-      tags.push(`<li class="tag-select">${tag}</li>`);
+      tags.push(`<li className="tag-select">${tag}</li>`);
     });
 
     return tags;
@@ -67,20 +67,20 @@ class LibraryFilters extends Component {
 
   render() {
     return (
-      <form class="cl-library__filters mb-30">
-        <div class="cl-library__filters--tags col-3">
+      <form className="cl-library__filters mb-30">
+        <div className="cl-library__filters--tags col-3">
           <input placeholder="Search Tags..."/>
           { this.state.tagsDropdownActive &&
             <ul>
               {this.renderTags()}
             </ul>
           }
-          <div class="selected-tags">
+          <div className="selected-tags">
             {this.renderSelectedTags()}
           </div>
         </div>
-        <div class="cl-library__filters--type col-3">
-          <button class="type-dropdown" onClick={this.openTypeDropdown}>
+        <div className="cl-library__filters--type col-3">
+          <button className="type-dropdown" onClick={this.openTypeDropdown}>
             Type ▼
             { this.state.typeDropdownActive &&
               <ul>
