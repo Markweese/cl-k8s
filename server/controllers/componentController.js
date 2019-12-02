@@ -14,7 +14,7 @@ exports.getTags = async (req,res) => {
 }
 
 exports.getTypes = async (req,res) => {
-  let types = await Component.find({}, {_id:0, types:1});
+  let types = await Component.find({}, {_id:0, type:1});
 
   res.send(types);
 }
